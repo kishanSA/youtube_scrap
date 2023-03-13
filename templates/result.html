@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Youtube Channel Videos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <div class="table-users">
+   <div class="header">Channel Name: {{ channel }}</div>
+   <table cellspacing="0" width="80%">
+    <thead>
+      <tr style="font-weight:bold;">
+         <th>No.</th>
+         <th>Title</th>
+         <th>Publish Date</th>
+         <th>Total Views</th>
+         <th>Video URL</th>
+         <th>Thumbnail URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for video in videos %}
+      <tr>
+          <td width="5%">{{video['No']}}</td>        
+          <td width="35%">{{video['Video Title']}}</td>
+          <td width="10%">{{video['Publish Date']}}</td>
+          <td width="10%">{{video['Views']}}</td>
+          <td width="20%"><a href={{video['Video URL']}}>{{video['Video URL']}}</a></td>
+          <td width="20%"><a href={{video['Thumbnail']}}>{{video['Thumbnail']}}</a></td>
+       </tr>
+       {% endfor %}
+      </tbody>
+   </table>
+</div>
+</body>
+
+</html>

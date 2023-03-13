@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h2 style="text-align: center">Youtube Channel Search</h2>
+
+    <div class="form">
+        <form action="/ytVids" method="POST">
+            <table>
+                <tr>
+                    <td>Channel Name</td>
+                    <td>No. of Videos</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="content" id="content"></td>
+                    <td>
+                        <select name="v_count" id = "vid_count" >
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                        </select>
+                    </td>
+                    <td><input type="submit" value="Search"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+{% endblock %}
