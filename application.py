@@ -66,9 +66,6 @@ def index():
                     publish = result[val[:3]](int(num))
 
                     publish = publish.strftime("%d %b %Y")
-
-                    # publish = h.get_video_publish_date(published[n].split('"')[-2])
-                    
                     fw.write(f"{(n+1)}, {videoId}, {thumb}, {title}, {view}, {publish} \n")
                     detail = {"No": (n+1), "Video URL": videoId, "Thumbnail": thumb, "Video Title": title, 
                               "Views": view, "Publish Date": publish}
